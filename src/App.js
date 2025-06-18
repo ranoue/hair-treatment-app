@@ -295,24 +295,15 @@ const HairTreatmentApp = () => {
       <PRPNotification />
       <div className="max-w-3xl mx-auto mt-10 sm:mt-20">
         <header className="flex items-center justify-between mb-6">
-  <div className="flex items-center space-x-3">
-    <img src="/logo.png" alt="Logo" className="h-10 w-10 rounded-full" />
-    <h1 className="text-3xl sm:text-4xl font-bold">Hair Schedule</h1>
-  </div>
-  <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full p-1">
-    {['day', 'week', 'month'].map(v => (
-      <button
-        key={v}
-        onClick={() => setView(v)}
-        className={`px-4 py-1 rounded-full text-sm font-semibold transition-colors ${
-          view === v ? 'bg-white text-black' : 'text-white hover:bg-white/10'
-        }`}
-      >
-        {v.charAt(0).toUpperCase() + v.slice(1)}
-      </button>
-    ))}
-  </div>
-</header>
+            <h1 className="text-3xl sm:text-4xl font-bold">Hair Schedule</h1>
+            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full p-1">
+                 {['day', 'week', 'month'].map(v => (
+                    <button key={v} onClick={() => setView(v)} className={`px-4 py-1 rounded-full text-sm font-semibold transition-colors ${view === v ? 'bg-white text-black' : 'text-white hover:bg-white/10'}`}>
+                        {v.charAt(0).toUpperCase() + v.slice(1)}
+                    </button>
+                ))}
+            </div>
+        </header>
 
         <div className="flex items-center justify-between mb-6">
             <button onClick={() => navigate(-1)} className="p-2 rounded-full hover:bg-white/10 transition-colors"><ChevronLeft size={24} /></button>
